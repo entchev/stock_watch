@@ -4,7 +4,7 @@ export const RECEIVE_ALL_STOCKS = 'RECEIVE_ALL_STOCKS';
 export const RECEIVE_SINGLE_STOCK = 'RECEIVE_SINGLE_STOCK';
 export const RECEIVE_STOCK_ERRORS = 'RECEIVE_STOCK_ERRORS';
 
-export const requestAllStocks = () => (dispatch) => {
+const requestAllStocks = () => (dispatch) => {
   return APIUtil.fetchAllStocks()
     .then(stocks => { dispatch(receiveAllStocks(stocks)) });
 }
@@ -30,3 +30,5 @@ export const receiveStockErrors = errors => ({
   type: RECEIVE_STOCK_ERRORS,
   errors
 });
+
+export default requestAllStocks;
