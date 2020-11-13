@@ -14,20 +14,20 @@ const App = () => (
       <h1 className="title">Stock Watch</h1>
       <h1 className="title-login"><GreetingContainer /></h1>
     </header>
-    <div className="stock-detail">
+    {<br></br>}{<br></br>}
+    <div className="stock-index">
       <br/>
-      <h3 className="index-info">Stock Watch is a portfolio management app, designed to help you
+      <h3 className="stock-detail">Stock Watch is a portfolio management app, designed to help you
         manage your investments and keep track of potential opportunities.
         {<br></br>}{<br></br>}Make a selection from our list of top stocks on the left. Alternatively, 
-        you can {<Link to="/login">login</Link>} or {<Link to="/signup">sign up</Link>} 
+        you can log in or sign up using the top-right menu.{<br></br>}{<br></br>}
+        Having an account also allows the creation of a personal portfolio and watchlist.
       </h3>
+      <Route path="/" component={StockIndexContainer} />
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
       </Switch>
-    </div>
-    <div className="stock-index">
-      <Route path="/" component={StockIndexContainer} />
     </div>
   </section>
 );
