@@ -7,8 +7,7 @@ import ReactDOM from 'react-dom'
 import Root from '../components/root'
 import configureStore from '../store/store'
 import { login, logout, signup } from '../actions/session_actions'
-import { fetchSingleStock } from '../util/stock_api_util'
-import { receiveSingleStock } from '../actions/stock_actions'
+import { requestSingleStock, requestAllStocks } from '../actions/stock_actions'
 
 
 
@@ -29,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // for testing purposes
-  window.fetchSingleStock = fetchSingleStock
-  window.receiveSingleStock = receiveSingleStock
+  window.requestSingleStock = requestSingleStock
+  window.requestAllStocks = requestAllStocks
   window.login = login
   window.logout = logout
   window.signup = signup

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import users from './users_reducer';
+import stock from './stock_reducer';
 
 const entitiesReducer =  combineReducers({
-  users,
+  stock,
+  users
 });
 
 export default entitiesReducer;

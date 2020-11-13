@@ -21,9 +21,9 @@ export const receiveAllStocks = stocks => ({
   stocks
 });
 
-export const receiveSingleStock = payload => ({
+export const receiveSingleStock = stock => ({
   type: RECEIVE_SINGLE_STOCK,
-  payload,
+  stock,
 });
 
 export const receiveStockErrors = errors => ({
