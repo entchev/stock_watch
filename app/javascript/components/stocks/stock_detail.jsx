@@ -1,25 +1,32 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-class StockPrice extends React.Component {
+class StockDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       stockChartXValues: [],
       stockChartYValues: []
     }
-    this.stockSymbol = '';
   }
 
   componentDidMount() {
     this.fetchStock();
+    this.props.requestSingleStock(this.props.match.params.stockId);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.stockId !== this.props.match.params.stockId) {
+      this.props.requestSingleStock(this.props.match.params.stockId);
+      this.fetchStock();
+    }
   }
 
   fetchStock() {
     const pointerToThis = this;
     console.log(pointerToThis);
-    const API_KEY = "154C2C345E8ASOJP";
-    let StockSymbol = 'CAT';
+    const API_KEY = "154C2C345E8ASOJP";  // The API Key is free, available from the Alpha Vantage website
+    let StockSymbol = this.props.stock.symbol;
     let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=compact&apikey=${API_KEY}`;
     let stockChartXValuesFunction = [];
     let stockChartYValuesFunction = [];
@@ -48,9 +55,17 @@ class StockPrice extends React.Component {
   }
 
   render() {
+    const stock = this.props.stock;
+
+    if (!stock) return null; 
+
     return (
       <div>
-        <h1>Stock Price View (100 days)</h1>
+        <figure>
+          <img src={stock.image_url} alt={stock.name} />
+        </figure><br />
+
+        <h1>Stock Price (100 days)</h1><br />
         <Plot
           data={[
             {
@@ -61,11 +76,16 @@ class StockPrice extends React.Component {
               marker: { color: 'green' },
             }
           ]}
-          layout={{ width: 720, height: 440, title: this.StockSymbol }}
+          layout={{ width: 720, height: 440, title: stock.name }}
         />
+        <br/><br/>
+        <ul>
+          <li className="summary"><b>Company Summary</b></li>
+          <li className="summary">{stock.stock_desc}</li>
+        </ul>
       </div>
     )
   }
 }
 
-export default StockPrice;
+export default StockDetail;

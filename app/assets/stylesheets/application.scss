@@ -27,6 +27,36 @@ body {
   height: 100%;
 }
 
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  color: $black;
+  font-weight: 400;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+#root {
+  // 63px for header(43px picture, 10px padding), 40 px for padding
+  height: calc(100% - 63px - 40px);
+}
+
+//                        //
+// HEADER BANNER + LOG IN //
+//                        //
+
 header {
   display: flex;
   justify-content: space-between;
@@ -61,29 +91,12 @@ header {
   }
 }
 
-h2 {
-  font-size: 32px;
-}
-
-h3 {
-  font-size: 18px;
-  text-align: center;
-  color: $black;
-  font-weight: 300;
-}
-
-a:link {
-  text-decoration: none;
-  color: white;
-}
-
-a:visited {
-  text-decoration: none;
-  color: white;
-}
+//               //
+// LOG IN FORM  //
+//             //
 
 .login-form-container {
-  margin-top: 100px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
@@ -97,22 +110,6 @@ a:visited {
 .login-form-container a:link {
   color: black;
 }
-
-// .index-info {
-//   display: block;
-//   margin-top: 60px;
-// }
-
-// .index-info a:link {
-//   color: black;
-//   font-weight: 600;
-//   font-style: italic;
-// }
-// .index-info a:visited {
-//   color: black;
-//   font-weight: 600;
-//   font-style: italic;
-// }
 
 //              //
 // TOP STOCKS  //
@@ -130,6 +127,7 @@ a:visited {
     height: 100%;
     box-sizing: border-box;
     overflow: scroll;
+    max-height: 82vh;
     border: 6px solid black;
     border-radius: 20px;
     margin-left: 30px;
@@ -152,7 +150,7 @@ a:visited {
   cursor: pointer;
 
   &:hover {
-    background-color: grey;
+    background-color: lightgray;
   }
 
   img {
@@ -187,37 +185,45 @@ a:visited {
   border: 6px solid black;
   margin: 0 40px;
   padding: 20px;
+  max-height: 82vh;
   overflow: scroll;
   background-color: lightgray;
 
+  .index-img {
+    width: 60%;
+    max-height: 200px;
+    border-radius: 20px;
+  }
+
   figure {
     border: 4px solid black;
-    border-radius: 8px;
-    width: 80%;
+    border-radius: 20px;
+    width: 86%;
     padding: 20px;
     max-height: 400px;
-    background: rgb(187, 139, 139); /* For browsers that do not support gradients */
+    background: white; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(
       315deg,
-      rgb(187, 139, 139)
+      whitesmoke
       yellow
     ); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(
       315deg,
-      rgb(187, 139, 139)
+      whitesmoke
       yellow
     ); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(
       315deg,
-      rgb(187, 139, 139)
+      whitesmoke
       yellow
     ); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(315deg, rgb(187, 139, 139) yellow); /* Standard syntax */
+    background: linear-gradient(315deg, whitesmoke yellow); /* Standard syntax */
+  }
 
-    img {
-      width: 100%;
-      max-height: 380px;
-    }
+  img {
+    width: 60%;
+    max-height: 100px;
+    border-radius: 20px;
   }
 
   ul {
@@ -235,4 +241,24 @@ a:visited {
     font-size: 12px;
     font-style: bold;
   }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 18px;
+    text-align: center;
+    color: $black;
+    font-weight: 300;
+  }
+  .summary {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+}
+  .summary:first-of-type {
+    text-align: center;
+}
 }

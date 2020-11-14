@@ -6,12 +6,14 @@ import {
 const stockReducer = (state = {}, action) => {
   Object.freeze(state);
 
+  let item;
+
   switch (action.type) {
     case RECEIVE_ALL_STOCKS:
       return Object.assign({}, state, action.stocks);
     case RECEIVE_SINGLE_STOCK:
-      // const stock = { [action.stock.stock.id]: action.stock };
-      return Object.assign({}, state, action.stock );
+      item = action.payload.stock; 
+      return Object.assign({}, state, { [item.id]: item });
     default:
       return state;
   }
