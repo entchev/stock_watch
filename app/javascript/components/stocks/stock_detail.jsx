@@ -65,7 +65,7 @@ class StockDetail extends React.Component {
           <img src={stock.image_url} alt={stock.name} />
         </figure><br />
 
-        <h1>Stock Price (100 days)</h1><br />
+        <h1>Stock Price in $ (Last 100 days)</h1><br />
         <Plot
           data={[
             {

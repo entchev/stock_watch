@@ -60,10 +60,11 @@ a:visited {
 header {
   display: flex;
   justify-content: space-between;
-  background-color: #941ce4;
+  background-color: #073736; 
   padding: 20px;
-  border: 2px solid black;
-  color: whitesmoke;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  color: white;
   font-family: 'Roboto', sans-serif;
   height: 50px;
 
@@ -185,9 +186,9 @@ header {
   border: 6px solid black;
   margin: 0 40px;
   padding: 20px;
-  max-height: 82vh;
+  max-height: 75vh;
   overflow: scroll;
-  background-color: lightgray;
+  background-color: lightgrey;
 
   .index-img {
     width: 60%;
