@@ -25,6 +25,7 @@ gem 'annotate'
 gem 'bcrypt'
 gem 'jquery-rails'
 gem 'figaro'
+gem 'activerecord-reset-pk-sequence'  #used to reset id number sequence after db reseed
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
