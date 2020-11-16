@@ -400,6 +400,131 @@ ActiveRecord::Base.transaction do
       'symbol' => 'NFLX',
       'stock_desc' => 'Netflix, Inc. provides subscription streaming entertainment service. It offers TV series, documentaries, and feature films across various genres and languages. The company provides members the ability to receive streaming content through a host of Internet-connected screens, including TVs, digital video players, television set-top boxes, and mobile devices. It also provides DVDs-by-mail membership services. The company has approximately 167 million paid members in 190 countries. Netflix, Inc. was founded in 1997 and is headquartered in Los Gatos, California.',
     },
+    '79' => {
+      'name' => 'The Allstate Corporation',
+      'symbol' => 'ALL',
+      'stock_desc' => 'The Allstate Corporation, through its subsidiaries, provides property and casualty, and other insurance products in the United States and Canada. The company operates through Allstate Protection, Service Businesses, Allstate Life, and Allstate Benefits segments. The Allstate Protection segment offers private passenger auto and homeowners insurance; specialty auto products, including motorcycle, trailer, motor home, and off-road vehicle insurance; other personal lines products, such as renter, condominium, landlord, boat, umbrella, and manufactured home and stand-alone scheduled personal property; liability insurance products; and commercial lines products under the Allstate, Esurance, and Encompass brand names. The Service Businesses segment provides consumer product protection plans; finance and insurance products, including vehicle service contracts, guaranteed asset protection waivers, road hazard tire and wheel, and paint less dent repair protection; roadside assistance; device and mobile data collection services; and analytic solutions using automotive telematics information and identity protection. This segment offers its products under various brands including Allstate Protection Plans, Allstate Dealer Services, Allstate Roadside Services, Arity, and Allstate Identity Protection. The Allstate Life Segment offers traditional, interest-sensitive, and variable life insurance products, as well as non-proprietary retirement product solutions offered by third-party providers. Its Allstate Benefits segment provides life, accident, critical illness, short-term disability, and other health insurance products. The company sells its products through direct contact centers, agencies, financial specialists, brokers, wholesale partners, and affinity groups, as well as through online and mobile applications. The Allstate Corporation was founded in 1931 and is based in Northbrook, Illinois.',
+    },
+    '80' => {
+      'name' => 'Advanced Micro Devices, Inc.',
+      'symbol' => 'AMD',
+      'stock_desc' => 'Advanced Micro Devices, Inc. operates as a semiconductor company worldwide. The company operates in two segments, Computing and Graphics; and Enterprise, Embedded and Semi-Custom. Its products include x86 microprocessors as an accelerated processing unit, chipsets, discrete and integrated graphics processing units (GPUs), data center and professional GPUs, and development services; and server and embedded processors, and semi-custom System-on-Chip (SoC) products, development services, and technology for game consoles. The company provides x86 microprocessors for desktop PCs under the AMD Ryzen, AMD Ryzen PRO, Ryzen, Threadripper, AMD A-Series, AMD FX, AMD Athlon, AMD Athlon PRO, and AMD Pro A-Series processors brands; microprocessors for notebook and 2-in-1s under the AMD Ryzen processors with Radeon Vega GPUs, AMD A-Series, AMD Athlon, AMD Ryzen PRO, and AMD Pro A-Series processors brands; microprocessors for servers under the AMD EPYC and AMD Opteron brands; and chipsets under the AMD trademark. It also offers discrete GPUs for desktop and notebook PCs under the AMD Radeon graphics and AMD Embedded Radeon brands; professional graphics products under the AMD Radeon Pro and AMD FirePro graphics brands; and Radeon Instinct accelerators for servers. In addition, the company provides embedded processor solutions for interactive digital signage, casino gaming, and medical imaging under the AMD Opteron, AMD Athlon, AMD Geode, AMD Ryzen, AMD EPYC, AMD R-Series, and G-Series processors brands; and customer-specific solutions based on AMD CPU, GPU, and multi-media technologies, as well as semi-custom SoC products. It serves original equipment and design manufacturers, datacenters, original design manufacturers, system integrators, independent distributors, online retailers, and add-in-board manufacturers through its direct sales force, independent distributors, and sales representatives. The company was founded in 1969 and is headquartered in Santa Clara, California.',
+    },
+    '81' => {
+      'name' => 'Walgreens Boots Alliance, Inc',
+      'symbol' => 'WBA',
+      'stock_desc' => 'Walgreens Boots Alliance, Inc. operates as a pharmacy-led health and beauty retail company. It operates through three segments: Retail Pharmacy USA, Retail Pharmacy International, and Pharmaceutical Wholesale. The Retail Pharmacy USA segment sells prescription drugs and an assortment of retail products, including health, wellness, beauty, personal care, consumable, and general merchandise products through its retail drugstores. It also provides specialty pharmacy services and mail services. As of August 31, 2020, this segment operated 9,021 retail stores under the Walgreens and Duane Reade brands in the United States; and six specialty pharmacies. The Retail Pharmacy International segment sells prescription drugs; and health and wellness, beauty, personal care, and other consumer products through its pharmacy-led health and beauty stores and optical practices, as well as through boots.com and an integrated mobile application. This segment operated 4,428 retail stores under the Boots, Benavides, and Ahumada in the United Kingdom, Thailand, Norway, the Republic of Ireland, the Netherlands, Mexico, and Chile; and 550 optical practices, including 165 on a franchise basis. The Pharmaceutical Wholesale segment engages in the wholesale and distribution of specialty and generic pharmaceuticals, health and beauty products, and home healthcare supplies and equipment, as well as provides related services to pharmacies and other healthcare providers. This segment operates in the United Kingdom, Germany, France, Turkey, Spain, the Netherlands, Egypt, Norway, Romania, the Czech Republic, and Lithuania. Walgreens Boots Alliance, Inc. was founded in 1901 and is based in Deerfield, Illinois.',
+    },
+    '82' => {
+      'name' => 'Virgin Galactic Holdings, Inc.',
+      'symbol' => 'SPCE',
+      'stock_desc' => 'Virgin Galactic Holdings, Inc., an integrated aerospace company, develops human spaceflight for private individuals and researchers in the United States. It also manufactures air and space vehicles. The company\'s spaceship operations include commercial human spaceflight, flying commercial research, and development payloads into space. In addition, it engages in the design and development, manufacturing, ground and flight testing, and post-flight maintenance of spaceflight vehicles. Virgin Galactic Holdings, Inc. was founded in 2017 and is headquartered in Las Cruces, New Mexico.',
+    },
+    '83' => {
+      'name' => 'McAfee Corp.',
+      'symbol' => 'MCFE',
+      'stock_desc' => 'McAfee Corp. provides various integrated security, privacy, and trust solutions to consumers, small and medium-sized businesses, large enterprises, and governments in the United States and internationally. The company operates in two segments, Consumer and Enterprise. Its security technologies enable home users and businesses to stay ahead of the wave of fileless attacks, viruses, malware, and other online threats. The company offers personal protection services that provide holistic digital protection of the individual and family wherever they go under the Total Protection and LiveSafe brands; and integrated and open platform for heterogeneous, multi-cloud, and on-premise environments. It also provides device security, online privacy and comprehensive Internet security, and identity protection services; and MVISION Device, MVISION Cloud, and MVISION security services. McAfee Corp. was founded in 2019 and is headquartered in San Jose, California.',
+    },
+    '84' => {
+      'name' => 'Broadcom Inc.',
+      'symbol' => 'AVGO',
+      'stock_desc' => 'Broadcom Inc. designs, develops, and supplies a range of semiconductor devices with a focus on complex digital and mixed signal complementary metal oxide semiconductor based devices and analog III-V based products worldwide. The company operates through three segments: Semiconductor Solutions, Infrastructure Software, and Intellectual Property licensing. It provides set-top box system-on-chips (SoCs); cable, digital subscriber line, and passive optical networking central office/consumer premise equipment SoCs; Wireless local area network access point SoCs; Ethernet switching and routing application specific standard products; embedded processors and controllers; serializer/deserializer application specific integrated circuits; optical and copper, and physical layers; and fiber optic laser and receiver components. The company also offers RF front end modules, filters, and power amplifiers; Wi-Fi, Bluetooth, and global positioning system/global navigation satellite system SoCs; custom touch controllers; serial attached small computer system interface, and redundant array of independent disks controllers and adapters; peripheral component interconnect express switches; fiber channel host bus adapters; read channel based SoCs; custom flash controllers; preamplifiers; and optocouplers, industrial fiber optics, motion control encoders and subsystems, and light emitting diodes. In addition, it provides mainframe and enterprise software solution and cybersecurity solutions. Its products are used in various applications, including enterprise and data center networking, home connectivity, set-top boxes, broadband access, telecommunication equipment, smartphones and base stations, data center servers and storage systems, factory automation, power generation and alternative energy systems, and electronic displays. The company has a collaboration agreement with Liqid Inc. Broadcom Inc. was incorporated in 2018 and is headquartered in San Jose, California.',
+    },
+    '85' => {
+      'name' => 'Take-Two Interactive Software, Inc.',
+      'symbol' => 'TTWO',
+      'stock_desc' => 'Take-Two Interactive Software, Inc. develops, publishes, and markets interactive entertainment solutions for consumers worldwide. The company offers its products under the Rockstar Games and 2K labels, as well as under Private Division and Social Point labels. It develops and publishes action/adventure products under the Grand Theft Auto, Max Payne, Midnight Club, and Red Dead Redemption names; and offers episodes, content, and virtual currency. The company also develops brands in other genres, including the LA Noire, Bully, and Manhunt franchises. In addition, the company publishes various entertainment properties across various platforms and a range of genres, such as shooter, action, role-playing, strategy, sports, and family/casual entertainment under the BioShock, Mafia, Sid Meier\'s Civilization, XCOM series, and Borderlands. Further, it publishes sports simulation titles comprising NBA 2K series, a basketball video game; the WWE 2K professional wrestling series. It also offers Kerbal Space Program, The Outer Worlds, Ancestors the Humankind Odyssey under Private Division. Additionally, the company offers free-to-play mobile games, such as Dragon City and Monster Legends. Its products are designed for console gaming systems, including Sony\'s PlayStation 4; Microsoft\'s Xbox One; the Nintendo Switch; and personal computers comprising smartphones and tablets. The company provides its products through physical retail, digital download, online platforms, and cloud streaming services. Take-Two Interactive Software, Inc. was founded in 1993 and is headquartered in New York, New York.',
+    },
+    '86' => {
+      'name' => '',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '87' => {
+      'name' => 'Apache',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '88' => {
+      'name' => 'FOX',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '89' => {
+      'name' => 'Gap',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '89' => {
+      'name' => 'Garmin',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '89' => {
+      'name' => 'General Motors',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '90' => {
+      'name' => 'Hasbro',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '91' => {
+      'name' => 'Morgan Stanley',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '92' => {
+      'name' => 'Ralph Lauren',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '93' => {
+      'name' => 'Palantir',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '94' => {
+      'name' => 'Prudential Financial',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '95' => {
+      'name' => 'Northropp Grumman',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '96' => {
+      'name' => 'Zoom',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '97' => {
+      'name' => 'Philip Morris',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '98' => {
+      'name' => 'Motorola Solutions',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '99' => {
+      'name' => 'Fiverr',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '100' => {
+      'name' => 'NIO',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
+    '101' => {
+      'name' => 'Hewlett Packard',
+      'symbol' => '',
+      'stock_desc' => '',
+    },
 
   }
 

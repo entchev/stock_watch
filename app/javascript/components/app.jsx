@@ -4,9 +4,9 @@ import LoginFormContainer from '../components/session_form/login_form_container'
 import SignupFormContainer from '../components/session_form/signup_form_container'
 import StockIndexContainer from '../components/stocks/stock_index_container'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
-import { Link } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom'
-import StockDetailContainer from './stocks/stock_detail_container';
+import StockDetailContainer from './stocks/stock_detail_container'
+import PortfolioFormContainer from '../components/portfolio_form/portfolio_form'
 
 const App = () => (
   <section>
@@ -35,6 +35,7 @@ const App = () => (
         <Switch>
           <AuthRoute exact path="/login" component={LoginFormContainer} />
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
+          <ProtectedRoute exact path="/portfolio_items/new" component={PortfolioFormContainer} />
         </Switch>
       </h3>
       <Route path="/" component={StockIndexContainer} />

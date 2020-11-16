@@ -1,4 +1,4 @@
-class Watchlist < ApplicationRecord
+class WatchlistItem < ApplicationRecord
   validates :name, :symbol, presence: true
 
   belongs_to :user

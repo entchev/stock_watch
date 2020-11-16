@@ -11,7 +11,7 @@ class Api::StocksController < ApplicationController
 
   private
 
-  def top_stock_params
+  def stock_params
     params.require(:stock).permit(:name, :symbol, :stock_desc, :image_url)
   end
 end

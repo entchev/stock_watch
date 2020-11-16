@@ -79,6 +79,11 @@ class StockDetail extends React.Component {
           layout={{ width: 720, height: 440, title: stock.name }}
         />
         <br/><br/>
+        <span className="detail-options">
+          <button className="detail-button">Add to portfolio</button>
+          <button className="detail-button">Add to watchlist</button> 
+        </span>
+        <br/><br/>
         <ul>
           <li className="summary"><b>Company Summary</b></li>
           <li className="summary">{stock.stock_desc}</li>

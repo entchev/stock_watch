@@ -90,6 +90,29 @@ header {
   .logout-button {
     margin-top: 5px;
   }
+
+  // AUTH BUTTONS //
+
+  .auth-button {
+    margin-right: 20px;
+    background-color: black; 
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+
+  .auth-button:hover {
+    background-color: grey; 
+    color: black;
+  }
+
 }
 
 //               //
@@ -262,4 +285,26 @@ header {
   .summary:first-of-type {
     text-align: center;
 }
+}
+
+// STOCK DETAIL BUTTONS //
+
+.detail-button {
+  margin-right: 30px;
+  background-color: #073736; 
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.detail-button:hover {
+  background-color: white; 
+  color: black;
 }

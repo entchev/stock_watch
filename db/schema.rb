@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_15_143025) do
+ActiveRecord::Schema.define(version: 2020_11_16_154351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "portfolios", force: :cascade do |t|
+  create_table "portfolio_items", force: :cascade do |t|
     t.integer "stock_id", null: false
     t.integer "user_id", null: false
     t.string "name", null: false
@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 2020_11_15_143025) do
     t.integer "amount_owned", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["stock_id"], name: "index_portfolios_on_stock_id"
-    t.index ["user_id"], name: "index_portfolios_on_user_id"
   end
 
   create_table "stocks", force: :cascade do |t|
@@ -47,15 +45,13 @@ ActiveRecord::Schema.define(version: 2020_11_15_143025) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  create_table "watchlists", force: :cascade do |t|
+  create_table "watchlist_items", force: :cascade do |t|
     t.integer "stock_id", null: false
     t.integer "user_id", null: false
     t.string "name", null: false
     t.string "symbol", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["stock_id"], name: "index_watchlists_on_stock_id"
-    t.index ["user_id"], name: "index_watchlists_on_user_id"
   end
 
 end
