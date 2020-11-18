@@ -4,23 +4,36 @@ import { withRouter } from 'react-router';
 class PortfolioForm extends React.Component {
   constructor(props) {
     super(props);
-    this.symbol = props.symbol;
-    this.name = props.name;
-    this.user_id = current_user.id;
-    this.stock_id = props.stock_id;
     this.state = {
-      name: null,
-      symbol: null,
       amount_owned: 1,
-      purchase_price: 99
+      purchase_price: 99,
+      location: this.props.location.pathname,
     };
 
+    this.fetchCompanyName = this.fetchCompanyName.bind(this)
+    this.fetchCompanySymbol = this.fetchCompanySymbol.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateBack = this.navigateBack.bind(this);
+    this.stock_id = this.state.location.substring(this.state.location.lastIndexOf('/') + 1)
   }
 
   navigateBack() {
     this.props.history.push('/');
+  }
+
+  componentDidMount() {
+    const pointerToThis = this;
+    console.log(pointerToThis);
+  }
+
+  fetchCompanyName() {
+    let currentStock = this.props.state.entities.stock[this.stock_id];
+    return currentStock.name;
+  }
+
+  fetchCompanySymbol() {
+    let currentStock = this.props.state.entities.stock[this.stock_id];
+    return currentStock.symbol;
   }
 
   update(property) {
@@ -32,9 +45,9 @@ class PortfolioForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('portfolio_item[name]', this.name);
-    formData.append('portfolio_item[symbol]', this.symbol);
-    formData.append('portfolio_item[user_id]', this.user_id);
+    formData.append('portfolio_item[name]', this.fetchCompanyName());
+    formData.append('portfolio_item[symbol]', this.fetchCompanySymbol());
+    formData.append('portfolio_item[user_id]', this.props.currentUser.id);
     formData.append('portfolio_item[stock_id]', this.stock_id);
     
     formData.append('portfolio_item[amount_owned]', this.state.amount_owned);
@@ -47,21 +60,18 @@ class PortfolioForm extends React.Component {
 
   render() {
     const { amount_owned, purchase_price } = this.state;
-    const name = this.name;
-    const symbol = this.symbol;
 
     return (
       <div className="new-item-container">
         <div className="new-item-form">
-          <h3 className="new-item-title">Add to your Portfolio</h3>
-
+          <h3 className="new-item-title">Add to your portfolio</h3>
           <form onSubmit={this.handleSubmit}>
 
             <label className="item-field">Company name</label>
             <input
               type="text"
               disabled
-              value={name}
+              value={this.fetchCompanyName()}
               className="item-field"
             />
 
@@ -69,22 +79,20 @@ class PortfolioForm extends React.Component {
             <input
               type="text"
               disabled
-              value={symbol}
+              value={this.fetchCompanySymbol()}
               className="item-field"
             />
 
-            <label className="item-field">Amount owned</label>
+            <label className="item-field">Shares owned</label>
             <input
-              min="0.1"
               type="number"
               value={amount_owned}
               onChange={this.update('amount_owned')}
               className="item-field"
             />
 
-            <label className="item-field">Purchase price</label>
+            <label className="item-field">Purchase price ($)</label>
             <input
-              min="0.1"
               type="number"
               value={purchase_price}
               onChange={this.update('purchase_price')}

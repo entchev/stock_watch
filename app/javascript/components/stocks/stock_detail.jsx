@@ -1,13 +1,20 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
+import { Link } from 'react-router-dom';
+import PortfolioFormContainer from '../portfolio_form/portfolio_form_container'
+import { ProtectedRoute } from '../../util/route_util'
+import { withRouter } from 'react-router-dom'
 
 class StockDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       stockChartXValues: [],
-      stockChartYValues: []
+      stockChartYValues: [],
+      name: this.props.stock.name,
+      symbol: this.props.stock.symbol,
     }
+
   }
 
   componentDidMount() {
@@ -56,6 +63,7 @@ class StockDetail extends React.Component {
 
   render() {
     const stock = this.props.stock;
+    const portfolio_path = `/portfolio_items/new/${this.props.stock.id}`
 
     if (!stock) return null; 
 
@@ -80,8 +88,8 @@ class StockDetail extends React.Component {
         />
         <br/><br/>
         <span className="detail-options">
-          <button className="detail-button">Add to portfolio</button>
-          <button className="detail-button">Add to watchlist</button> 
+          <button className="detail-button"><Link to={portfolio_path}>Add to portfolio</Link></button>
+          <button className="detail-button"><Link to="/watchlist_items/new">Add to watchlist</Link></button> 
         </span>
         <br/><br/>
         <ul>
@@ -93,4 +101,4 @@ class StockDetail extends React.Component {
   }
 }
 
-export default StockDetail;
+export default withRouter(StockDetail);

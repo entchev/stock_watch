@@ -305,6 +305,59 @@ header {
 }
 
 .detail-button:hover {
-  background-color: white; 
+  background-color: grey; 
   color: black;
 }
+
+// PORTFOLIO FORM //
+
+ .new-item-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 50px;
+ }
+
+ .new-item-form {
+   display: flex;
+   flex-direction: column;
+   width: 320px;
+   outline: black 1px solid;
+   padding: 5px 30px 10px 30px;
+ }
+
+ .new-item-title {
+   text-align: center;
+   padding-top: 10px;
+   padding-bottom: 5px;
+ }
+
+ .new-item-button {
+   margin: 5px;
+ }
+
+ input.item-field {
+   margin: 10px;
+   padding: 2px;
+ }
+
+ label.item-field {
+   width: 135px;
+   display: inline-block;
+   font-size: 16px;
+ }
+
+ .button-holder {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+ }
+
+ input.new-item-button {
+   width: 160px;
+   margin-top: 10px;
+ }
+
+ button.new-item-button {
+   width: 160px;
+ }

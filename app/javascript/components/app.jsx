@@ -1,12 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import GreetingContainer from './greeting/greeting_container'
 import LoginFormContainer from '../components/session_form/login_form_container'
 import SignupFormContainer from '../components/session_form/signup_form_container'
 import StockIndexContainer from '../components/stocks/stock_index_container'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Link, Redirect, HashRouter } from 'react-router-dom'
 import StockDetailContainer from './stocks/stock_detail_container'
-import PortfolioFormContainer from '../components/portfolio_form/portfolio_form'
+import PortfolioFormContainer from './portfolio_form/portfolio_form_container'
+
 
 const App = () => (
   <section>
@@ -28,15 +30,10 @@ const App = () => (
           you can log in or sign up using the top-right buttons. Having an account allows the creation of a personal portfolio and watchlist so you can keep track of 
           current or potential investments.
         </Route>
-        <Route
-          path="/stock/:stockId"
-          component={StockDetailContainer}
-        />
-        <Switch>
-          <AuthRoute exact path="/login" component={LoginFormContainer} />
-          <AuthRoute exact path="/signup" component={SignupFormContainer} />
-          <ProtectedRoute exact path="/portfolio_items/new" component={PortfolioFormContainer} />
-        </Switch>
+        <Route path="/stock/:stockId" component={StockDetailContainer} />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <ProtectedRoute path="/portfolio_items/new/" component={PortfolioFormContainer} />
       </h3>
       <Route path="/" component={StockIndexContainer} />
     </div>

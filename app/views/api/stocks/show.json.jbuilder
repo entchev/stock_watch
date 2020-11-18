@@ -1,5 +1,5 @@
 json.stock do
-  json.extract! @stock, :id, :name, :stock_desc
+  json.extract! @stock, :id, :name, :stock_desc, :symbol
   begin
     json.image_url asset_path("/#{@stock.image_url}")
   rescue

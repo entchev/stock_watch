@@ -1,15 +1,11 @@
 import { connect } from 'react-redux';
-
 import { createPortfolioItem } from '../../actions/portfolio_actions';
 import PortfolioForm from './portfolio_form';
 
-const mapStateToProps = (state, props) => {
-  const symbol = state.entities.stock[ownProps.match.params.stockId];
-  const name = state.entities.stock[ownProps.match.params.stockId];
-
+const mapStateToProps = (state) => {
   return {
-    symbol,
-    name
+    state,
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
@@ -21,3 +17,10 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(PortfolioForm);
+
+// BACKUP
+// const mapStateToProps = ( { session, entities: { users } }) => {
+// return {
+//   currentUser: users[session.id],
+// };
+// };
