@@ -22,7 +22,7 @@ class PortfolioForm extends React.Component {
     this.props.history.push('/');
   }
   navigateToPortfolio() {
-    this.props.history.push("/api/portfolio_items/");
+    this.props.history.push("/portfolio_items/");
   }
 
   componentDidMount() {
@@ -60,7 +60,6 @@ class PortfolioForm extends React.Component {
 
     this.props.createPortfolioItem(formData);
     this.navigateToPortfolio(); 
-    // this.navigateBack();
   }
 
   render() {

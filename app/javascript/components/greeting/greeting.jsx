@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, Route} from 'react-router-dom';
+import PortfolioContainer from '../portfolio/portfolio_container';
+
 
 const Greeting = ({ currentUser, logout }) => {
 
@@ -11,10 +13,11 @@ const Greeting = ({ currentUser, logout }) => {
   );
 
   const personalGreeting = () => (
-    <hgroup className="header-group">
+    <div>
       <h3 className="user-login">Hello, {currentUser.username}</h3>
       <button className="logout-button" onClick={logout}>Log Out</button>
-    </hgroup>
+      <button className="portfolio-button"><Link to="/portfolio_items/" >Portfolio & Watchlist</Link></button>
+    </div>
   );
 
   return currentUser ? personalGreeting() : sessionLinks();

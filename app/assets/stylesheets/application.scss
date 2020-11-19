@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import "variables";
 
 html {
   height: 100%;
@@ -22,7 +21,6 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   background: white;
-  color: $grey;
   font-size: 12px;
   height: 100%;
 }
@@ -34,18 +32,16 @@ h2 {
 h3 {
   font-size: 20px;
   text-align: center;
-  color: $black;
+  color: black;
   font-weight: 400;
 }
 
 a:link {
   text-decoration: none;
-  color: white;
 }
 
 a:visited {
   text-decoration: none;
-  color: white;
 }
 
 #root {
@@ -89,7 +85,20 @@ header {
 
   .logout-button {
     margin-top: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: black;
   }
+  .portfolio-button {
+    margin-top: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: black;
+      a { color: black; }  
+   }
+  }
+
+
 
   // AUTH BUTTONS //
 
@@ -113,7 +122,6 @@ header {
     color: black;
   }
 
-}
 
 //               //
 // LOG IN FORM  //
@@ -273,7 +281,7 @@ header {
   h3 {
     font-size: 18px;
     text-align: center;
-    color: $black;
+    color: black;
     font-weight: 300;
   }
   .summary {
@@ -291,7 +299,7 @@ header {
 
 .detail-button {
   margin-right: 30px;
-  background-color: #073736; 
+  background-color:#073736; 
   color: white;
   border: none;
   border-radius: 12px;
@@ -303,10 +311,16 @@ header {
   cursor: pointer;
   transition-duration: 0.4s;
 }
-
+// 073736
 .detail-button:hover {
   background-color: grey; 
   color: black;
+}
+
+.detail-button{
+  a {
+    color: white;
+  }  
 }
 
 // PORTFOLIO FORM //
@@ -361,3 +375,14 @@ header {
  button.new-item-button {
    width: 160px;
  }
+
+//  PORTFOLIO PAGE //
+
+table, th, td {
+  padding: 15px;
+}
+
+table {
+  border: 2px solid black;
+  width: 100%;
+}
