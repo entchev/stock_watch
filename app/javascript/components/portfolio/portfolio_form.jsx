@@ -14,11 +14,15 @@ class PortfolioForm extends React.Component {
     this.fetchCompanySymbol = this.fetchCompanySymbol.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateBack = this.navigateBack.bind(this);
+    this.navigateToPortfolio = this.navigateToPortfolio.bind(this);
     this.stock_id = this.state.location.substring(this.state.location.lastIndexOf('/') + 1)
   }
 
   navigateBack() {
     this.props.history.push('/');
+  }
+  navigateToPortfolio() {
+    this.props.history.push("/api/portfolio_items/");
   }
 
   componentDidMount() {
@@ -55,7 +59,8 @@ class PortfolioForm extends React.Component {
 
 
     this.props.createPortfolioItem(formData);
-    this.navigateBack();
+    this.navigateToPortfolio(); 
+    // this.navigateBack();
   }
 
   render() {

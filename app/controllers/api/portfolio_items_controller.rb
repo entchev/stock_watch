@@ -1,8 +1,10 @@
 class Api::PortfolioItemsController < ApplicationController
   before_action :require_logged_in
 
+  def index
+  end
+
   def show
-    @portfolio_item = PortfolioItem.find(params[:id])
   end
 
   def new

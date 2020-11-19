@@ -1,15 +1,8 @@
 export const fetchPortfolioItems = data => (
   $.ajax({
     method: 'GET',
-    url: 'api/porfolio_items',
+    url: 'api/portfolio_items/',
     data
-  })
-);
-
-export const fetchPortfolioItem = id => (
-  $.ajax({
-    method: 'GET',
-    url: `api/portfolio_items/${id}`
   })
 );
 

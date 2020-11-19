@@ -1,7 +1,7 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 import { Link } from 'react-router-dom';
-import PortfolioFormContainer from '../portfolio_form/portfolio_form_container'
+import PortfolioFormContainer from '../portfolio/portfolio_form_container'
 import { ProtectedRoute } from '../../util/route_util'
 import { withRouter } from 'react-router-dom'
 

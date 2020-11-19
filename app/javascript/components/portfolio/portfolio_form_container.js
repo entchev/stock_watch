@@ -17,10 +17,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(PortfolioForm);
-
-// BACKUP
-// const mapStateToProps = ( { session, entities: { users } }) => {
-// return {
-//   currentUser: users[session.id],
-// };
-// };

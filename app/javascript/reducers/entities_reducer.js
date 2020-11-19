@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import users from './users_reducer';
 import stock from './stock_reducer';
-import portfolios from './portfolios_reducer';
+import portfolio from './portfolios_reducer';
 
 
 const entitiesReducer =  combineReducers({
   stock,
   users,
-  portfolios
+  portfolio
 });
 
 export default entitiesReducer;

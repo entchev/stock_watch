@@ -7,7 +7,8 @@ import StockIndexContainer from '../components/stocks/stock_index_container'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
 import { Route, Switch, Link, Redirect, HashRouter } from 'react-router-dom'
 import StockDetailContainer from './stocks/stock_detail_container'
-import PortfolioFormContainer from './portfolio_form/portfolio_form_container'
+import PortfolioFormContainer from './portfolio/portfolio_form_container'
+import PortfolioContainer from './portfolio/portfolio_container'
 
 
 const App = () => (
@@ -34,6 +35,7 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute path="/portfolio_items/new/" component={PortfolioFormContainer} />
+        <ProtectedRoute path="/api/portfolio_items/" component={PortfolioContainer} />
       </h3>
       <Route path="/" component={StockIndexContainer} />
     </div>
