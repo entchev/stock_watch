@@ -2,9 +2,12 @@ class Api::PortfolioItemsController < ApplicationController
   before_action :require_logged_in
 
   def index
+    sleep 0.5
+    @items = PortfolioItem.all
   end
 
   def show
+    sleep 0.5
   end
 
   def new

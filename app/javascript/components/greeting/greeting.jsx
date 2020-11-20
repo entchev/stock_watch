@@ -15,7 +15,7 @@ const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => (
     <div>
       <h3 className="user-login">Hello, {currentUser.username}</h3>
-      <button className="logout-button" onClick={logout}>Log Out</button>
+      <button className="logout-button" onClick={logout}>Log out</button>
       <button className="portfolio-button"><Link to="/portfolio_items/" >Portfolio & Watchlist</Link></button>
     </div>
   );

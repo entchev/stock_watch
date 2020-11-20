@@ -15,27 +15,24 @@ class Element extends React.Component {
 
   componentDidMount() {
 
-    const url = `${iex.base_url}/stock/${this.props.symbol}/intraday-
-    prices?ChartLast=1&token=${iex.api_token}`
-    
+  //   const url = `${iex.base_url}/stock/${this.props.symbol}/intraday-prices?chartLast=1&token=${iex.api_token}`
 
-    this.setState({
-      data: {
-        company: "default",
-        shares: 5,
-        cost: 20,
-        current_price: 10,
-      }
-    })
-  }
+  //   fetch(url)
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     this.setState({
+  //       data: data[data.length-1]
+  //   })
+  // })
+}
 
   render () {
     return (
     <tr>
-      <td>Company</td>
+      <td>{this.props.name}</td>
       <td>{this.props.symbol}</td>
-      <td>{this.state.data.shares}</td>
-      <td>{this.state.data.cost}</td>
+      <td>{this.props.amount}</td>
+      <td>{this.props.cost}</td>
       <td>{this.state.data.current_price}</td>
       <td>{this.martket_value}</td>
       <td>{this.total_gain}</td>

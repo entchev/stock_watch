@@ -17,8 +17,15 @@ class Portfolio extends React.Component {
 
   render() {
 
+    const items = this.props.state.entities.portfolio_items
+    let unpacked = Object.values(items)
+    const content = unpacked.map((item) =>
+      <Element key ={item.id} name={item.name} symbol={item.symbol} amount={item.amount_owned} cost={item.purchase_price} />
+    );    
+
     return (
       <div>
+        <br/><br/><br/>
         <h2>Investments</h2><br/>
         <div className="portfolio-container">
           <table className="portfolio-table">
@@ -34,7 +41,7 @@ class Portfolio extends React.Component {
               </tr>
             </thead>
             <tbody>
-              <Element symbol="aapl" />
+              {content}
             </tbody>
           </table>
         </div>
