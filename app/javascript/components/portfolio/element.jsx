@@ -28,6 +28,8 @@ class Element extends React.Component {
   render () {
     const amount = Number(this.props.amount)
     const cost = Number(this.props.cost)
+    console.log(amount)
+    console.log(cost)
 
     const mv = amount * this.state.data.close;
     const marketValue = Math.round((mv + Number.EPSILON) * 100) / 100

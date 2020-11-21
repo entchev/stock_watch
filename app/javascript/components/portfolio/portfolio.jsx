@@ -1,5 +1,6 @@
 import React from 'react';
 import Element from './element';
+import WatchlistElement from './watchlist_element';
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Portfolio extends React.Component {
 
   componentDidMount() {
     this.props.requestPortfolioItems();
+    this.props.requestWatchlistItems();
     const pointerToThis = this;
     console.log(pointerToThis);
   }
@@ -21,6 +23,11 @@ class Portfolio extends React.Component {
     const content = unpacked.map((item) =>
       <Element key ={item.id} name={item.name} symbol={item.symbol} amount={item.amount_owned} cost={item.purchase_price} />
     );    
+    const watchlist_items = this.props.state.entities.watchlist_items
+    let watchlist_unpacked = Object.values(watchlist_items)
+    const watchlist_content = watchlist_unpacked.map((item) =>
+      <WatchlistElement key ={item.id} name={item.name} symbol={item.symbol} />
+    );    
 
     return (
       <div>
@@ -29,7 +36,7 @@ class Portfolio extends React.Component {
         <div className="portfolio-container">
           <table className="portfolio-table">
             <thead>
-              <tr>
+              <tr className="table-head">
                 <th>Company</th>
                 <th>Symbol</th>
                 <th>Shares owned</th>
@@ -49,13 +56,15 @@ class Portfolio extends React.Component {
         <div className="watchlist-container">
           <table className="watchlist-table">
             <thead>
-              <tr>
+              <tr className="table-head">
                 <th>Company</th>
                 <th>Symbol</th>
                 <th>Current price</th>
-                <th>Market value</th>
               </tr>
             </thead>
+            <tbody>
+              {watchlist_content}
+            </tbody>
           </table>
           <br/><br/>
           <p>

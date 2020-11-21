@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link, Redirect, Route} from 'react-router-dom';
-import PortfolioContainer from '../portfolio/portfolio_container';
-
+import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout }) => {
 

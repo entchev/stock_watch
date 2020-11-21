@@ -68,6 +68,9 @@ header {
     font-size: 26px;
     padding-top: 10px;
     padding-left: 15px;
+        a {
+          color: white;
+        }
   }
 
   .title-login {
@@ -389,4 +392,9 @@ table, th, td {
 table {
   border: 2px solid black;
   width: 100%;
+}
+
+.table-head {
+  
+  font-style: italic;
 }

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { requestPortfolioItems } from '../../actions/portfolio_actions';
-import selectAllPortfolioItems from '../../reducers/selectors';
+import { requestWatchlistItems } from '../../actions/watchlist_actions';
 import Portfolio from './portfolio';
 
 const mapStateToProps = state => ({
@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestPortfolioItems: () => dispatch(requestPortfolioItems())
+  requestPortfolioItems: () => dispatch(requestPortfolioItems()),
+  requestWatchlistItems: () => dispatch(requestWatchlistItems())
 });
 
 export default connect(

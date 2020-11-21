@@ -4,7 +4,7 @@ const iex = {
 };
 
 export const alpha = {
-  api_token: "154C2C345E8ASOJP"
+  api_token: "91RX5I0LBBMNZO2B"
 }
 
 export default iex;

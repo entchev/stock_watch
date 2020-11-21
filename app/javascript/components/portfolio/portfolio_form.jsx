@@ -7,7 +7,7 @@ class PortfolioForm extends React.Component {
     super(props);
     this.state = {
       data: {},
-      amount_owned: 0,
+      amount_owned: 1,
       purchase_price: 0,
       location: this.props.location.pathname,
     };
@@ -39,8 +39,7 @@ class PortfolioForm extends React.Component {
       })
 
     const pointerToThis = this;
-    console.log(pointerToThis);
-    
+    console.log(pointerToThis);    
   }
 
   fetchCompanyName() {
@@ -77,6 +76,7 @@ class PortfolioForm extends React.Component {
 
   render() {
     const price = this.state.data.close;
+    this.state.purchase_price = price; 
     const { amount_owned } = this.state;
 
     return (
@@ -104,7 +104,7 @@ class PortfolioForm extends React.Component {
             <label className="item-field">Shares owned</label>
             <input
               type="text"
-              value={amount_owned}
+              defaultValue={amount_owned}
               onChange={this.update('amount_owned')}
               className="item-field"
             />

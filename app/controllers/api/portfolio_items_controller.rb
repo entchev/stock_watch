@@ -3,7 +3,7 @@ class Api::PortfolioItemsController < ApplicationController
 
   def index
     sleep 0.5
-    @items = PortfolioItem.all
+    @items = current_user.portfolio_items.all
   end
 
   def show

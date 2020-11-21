@@ -1,8 +1,6 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 import { Link } from 'react-router-dom';
-import PortfolioFormContainer from '../portfolio/portfolio_form_container'
-import { ProtectedRoute } from '../../util/route_util'
 import { withRouter } from 'react-router-dom'
 import alpha from '../../util/api'
 
@@ -16,6 +14,7 @@ class StockDetail extends React.Component {
       symbol: this.props.stock.symbol,
     }
 
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -33,6 +32,7 @@ class StockDetail extends React.Component {
   fetchStock() {
     const pointerToThis = this;
     console.log(pointerToThis);
+
     let StockSymbol = this.props.stock.symbol;
     let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=compact&apikey=${alpha.api_token}`;
     let stockChartXValuesFunction = [];
@@ -61,9 +61,33 @@ class StockDetail extends React.Component {
       )
   }
 
+  handleClick(e) {
+    e.preventDefault();
+
+    if (typeof this.props.currentUser === 'undefined') {
+      this.props.history.push("/login");
+    }
+    
+    const watchlist_state = { 
+      watchlist_item: {
+        stock_id: this.props.stock.id,
+        user_id: this.props.currentUser.id,
+        name: this.props.stock.name,
+        symbol: this.props.stock.symbol
+      }
+    };
+
+    console.log(watchlist_state);
+
+    this.props
+      .createWatchlistItem(watchlist_state)
+      .then(this.props.history.push("/portfolio_items/"));
+  }
+
   render() {
     const stock = this.props.stock;
     const portfolio_path = `/portfolio_items/new/${this.props.stock.id}`
+    const watchlist_path = `/watchlist_items/new/${this.props.stock.id}`
 
     if (!stock) return null; 
 
@@ -89,7 +113,7 @@ class StockDetail extends React.Component {
         <br/><br/>
         <span className="detail-options">
           <button className="detail-button"><Link to={portfolio_path}>Add to portfolio</Link></button>
-          <button className="detail-button"><Link to="/watchlist_items/new">Add to watchlist</Link></button> 
+          <button className="detail-button" onClick={this.handleClick}>Add to watchlist</button> 
         </span>
         <br/><br/>
         <ul>
