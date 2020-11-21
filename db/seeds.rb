@@ -529,7 +529,7 @@ ActiveRecord::Base.transaction do
   }
 
   stock = stock.map do |num, info|
-    info['image_url'] = "assets/logos/#{num}.svg"
+    info['image_url'] = "assets/images/logos/#{num}.svg"
     info
   end
 

@@ -22,7 +22,7 @@ const App = () => (
       <h3 className="stock-detail">
         <Switch>
           <Route exact path="/">
-            <img className="index-img" src="../assets/stock-exchange.jpg" alt="Stock Exchange" />
+            <img className="index-img" src="../assets/images/stock-exchange.jpg" alt="Stock Exchange" />
             <br /><br />
             Stock Watch is a portfolio management app, designed to help you
             manage your investments and keep track of potential opportunities. We are currently working
