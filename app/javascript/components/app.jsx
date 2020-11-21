@@ -13,7 +13,7 @@ import PortfolioContainer from './portfolio/portfolio_container'
 const App = () => (
   <section>
     <header>
-      <h1 className="title"><Link to="/">Stock Watch</Link></h1>
+      <h1 className="title"><Link to="/">Stock Watcher</Link></h1>
       <h1 className="title-login"><GreetingContainer /></h1>
     </header>
     {<br></br>}{<br></br>}
