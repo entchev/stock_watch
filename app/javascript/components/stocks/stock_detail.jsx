@@ -31,8 +31,6 @@ class StockDetail extends React.Component {
 
   fetchStock() {
     const pointerToThis = this;
-    console.log(pointerToThis);
-
     let StockSymbol = this.props.stock.symbol;
     let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=compact&apikey=${alpha.api_token}`;
     let stockChartXValuesFunction = [];
@@ -67,7 +65,7 @@ class StockDetail extends React.Component {
     if (typeof this.props.currentUser === 'undefined') {
       this.props.history.push("/login");
     }
-    
+
     const watchlist_state = { 
       watchlist_item: {
         stock_id: this.props.stock.id,
@@ -76,8 +74,6 @@ class StockDetail extends React.Component {
         symbol: this.props.stock.symbol
       }
     };
-
-    console.log(watchlist_state);
 
     this.props
       .createWatchlistItem(watchlist_state)

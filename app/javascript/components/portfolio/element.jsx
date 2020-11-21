@@ -28,13 +28,12 @@ class Element extends React.Component {
   render () {
     const amount = Number(this.props.amount)
     const cost = Number(this.props.cost)
-    console.log(amount)
-    console.log(cost)
 
-    const mv = amount * this.state.data.close;
+    const current_price = Math.round((this.state.data.close + Number.EPSILON) * 100) / 100
+    const mv = amount * current_price;
     const marketValue = Math.round((mv + Number.EPSILON) * 100) / 100
 
-    const tg = this.state.data.close * amount - amount * cost;
+    const tg = current_price * amount - amount * cost;
     const totalGain = Math.round((tg + Number.EPSILON) * 100) / 100
 
     return (
@@ -43,7 +42,7 @@ class Element extends React.Component {
       <td>{this.props.symbol}</td>
       <td>{amount}</td>
       <td>{cost}</td>
-      <td>{this.state.data.close}</td>
+      <td>{current_price}</td>
       <td>{marketValue}</td>
       <td>{totalGain}</td>
     </tr>

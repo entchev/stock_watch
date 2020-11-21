@@ -23,11 +23,13 @@ class WatchlistElement extends React.Component {
 
   render() {
 
+    const current_price = Math.round((this.state.data.close + Number.EPSILON) * 100) / 100
+
     return (
       <tr>
         <td>{this.props.name}</td>
         <td>{this.props.symbol}</td>
-        <td>{this.state.data.close}</td>
+        <td>{current_price}</td>
       </tr>
     )
   }

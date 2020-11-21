@@ -12,8 +12,6 @@ class Portfolio extends React.Component {
   componentDidMount() {
     this.props.requestPortfolioItems();
     this.props.requestWatchlistItems();
-    const pointerToThis = this;
-    console.log(pointerToThis);
   }
 
   render() {
@@ -23,6 +21,7 @@ class Portfolio extends React.Component {
     const content = unpacked.map((item) =>
       <Element key ={item.id} name={item.name} symbol={item.symbol} amount={item.amount_owned} cost={item.purchase_price} />
     );    
+    
     const watchlist_items = this.props.state.entities.watchlist_items
     let watchlist_unpacked = Object.values(watchlist_items)
     const watchlist_content = watchlist_unpacked.map((item) =>

@@ -38,8 +38,7 @@ class PortfolioForm extends React.Component {
         })
       })
 
-    const pointerToThis = this;
-    console.log(pointerToThis);    
+    this.state.purchase_price = this.state.data.close;
   }
 
   fetchCompanyName() {
@@ -76,7 +75,7 @@ class PortfolioForm extends React.Component {
 
   render() {
     const price = this.state.data.close;
-    this.state.purchase_price = price; 
+
     const { amount_owned } = this.state;
 
     return (
