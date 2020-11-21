@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Element from './element';
 
 class Portfolio extends React.Component {
@@ -58,6 +57,10 @@ class Portfolio extends React.Component {
               </tr>
             </thead>
           </table>
+          <br/><br/>
+          <p>
+            Please note, current price is valid as of market close on the previous market day*
+          </p>
         </div>
       </div>
     )

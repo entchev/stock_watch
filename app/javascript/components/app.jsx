@@ -28,7 +28,7 @@ const App = () => (
             predominantly with US stocks, with plans to roll out in the UK soon, so stay tuned!
             {<br></br>}{<br></br>}Make a selection from our list of top stocks on the left. Alternatively, 
             you can log in or sign up using the top-right buttons. Having an account allows the creation of a personal portfolio and watchlist so you can keep track of 
-            current or potential investments. <br/><br/>
+            your current or potential investments. <br/><br/>
           </Route>
           <Route path="/stock/:stockId" component={StockDetailContainer} />
           <AuthRoute exact path="/login" component={LoginFormContainer} />

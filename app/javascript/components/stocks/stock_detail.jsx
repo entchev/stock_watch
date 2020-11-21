@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PortfolioFormContainer from '../portfolio/portfolio_form_container'
 import { ProtectedRoute } from '../../util/route_util'
 import { withRouter } from 'react-router-dom'
+import alpha from '../../util/api'
 
 class StockDetail extends React.Component {
   constructor(props) {
@@ -32,9 +33,8 @@ class StockDetail extends React.Component {
   fetchStock() {
     const pointerToThis = this;
     console.log(pointerToThis);
-    const API_KEY = "154C2C345E8ASOJP";  // The API Key is free, available from the Alpha Vantage website
     let StockSymbol = this.props.stock.symbol;
-    let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=compact&apikey=${API_KEY}`;
+    let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=compact&apikey=${alpha.api_token}`;
     let stockChartXValuesFunction = [];
     let stockChartYValuesFunction = [];
     this.StockSymbol = StockSymbol;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import StockIndexItem from './stock_index_item'
-import StockDetailContainer from './stock_detail_container';
  
 class StockIndex extends Component {
   componentDidMount() {

@@ -3,4 +3,8 @@ const iex = {
   base_url: "https://cloud.iexapis.com/stable"
 };
 
+export const alpha = {
+  api_token: "154C2C345E8ASOJP"
+}
+
 export default iex;

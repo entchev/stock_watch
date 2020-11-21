@@ -1,12 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import iex from '../../util/api';
 
 class PortfolioForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      amount_owned: 1,
-      purchase_price: 99,
+      data: {},
+      amount_owned: 0,
+      purchase_price: 0,
       location: this.props.location.pathname,
     };
 
@@ -26,8 +28,19 @@ class PortfolioForm extends React.Component {
   }
 
   componentDidMount() {
+    const url = `${iex.base_url}/stock/${this.fetchCompanySymbol()}/intraday-prices?chartLast=1&token=${iex.api_token}`
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          data: data[data.length - 1]
+        })
+      })
+
     const pointerToThis = this;
     console.log(pointerToThis);
+    
   }
 
   fetchCompanyName() {
@@ -43,7 +56,7 @@ class PortfolioForm extends React.Component {
   update(property) {
     return e => this.setState({
       [property]: e.target.value
-    });
+    }); 
   }
 
   handleSubmit(e) {
@@ -63,7 +76,8 @@ class PortfolioForm extends React.Component {
   }
 
   render() {
-    const { amount_owned, purchase_price } = this.state;
+    const price = this.state.data.close;
+    const { amount_owned } = this.state;
 
     return (
       <div className="new-item-container">
@@ -89,7 +103,7 @@ class PortfolioForm extends React.Component {
 
             <label className="item-field">Shares owned</label>
             <input
-              type="number"
+              type="text"
               value={amount_owned}
               onChange={this.update('amount_owned')}
               className="item-field"
@@ -97,8 +111,8 @@ class PortfolioForm extends React.Component {
 
             <label className="item-field">Purchase price ($)</label>
             <input
-              type="number"
-              value={purchase_price}
+              type="text"
+              defaultValue={price}
               onChange={this.update('purchase_price')}
               className="item-field"
             />
