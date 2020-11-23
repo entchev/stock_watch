@@ -83,7 +83,6 @@ class StockDetail extends React.Component {
   render() {
     const stock = this.props.stock;
     const portfolio_path = `/portfolio_items/new/${this.props.stock.id}`
-    const watchlist_path = `/watchlist_items/new/${this.props.stock.id}`
 
     if (!stock) return null; 
 

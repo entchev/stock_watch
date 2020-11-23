@@ -135,7 +135,7 @@ header {
 //             //
 
 .login-form-container {
-  margin-top: 30px;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
@@ -148,6 +148,11 @@ header {
 
 .login-form-container a:link {
   color: black;
+}
+
+.session-submit {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 //              //

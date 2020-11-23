@@ -8,16 +8,26 @@ class PortfolioForm extends React.Component {
     this.state = {
       data: {},
       amount_owned: 1,
-      purchase_price: 0,
       location: this.props.location.pathname,
     };
+
+    this.stock_id = this.state.location.substring(this.state.location.lastIndexOf('/') + 1)
+    const stock = this.props.state.entities.stock[this.stock_id];
+    const url = `${iex.base_url}/stock/${stock.symbol}/intraday-prices?chartLast=1&token=${iex.api_token}`
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          purchase_price: data[data.length - 1].close,
+        })
+      })
 
     this.fetchCompanyName = this.fetchCompanyName.bind(this)
     this.fetchCompanySymbol = this.fetchCompanySymbol.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateBack = this.navigateBack.bind(this);
     this.navigateToPortfolio = this.navigateToPortfolio.bind(this);
-    this.stock_id = this.state.location.substring(this.state.location.lastIndexOf('/') + 1)
   }
 
   navigateBack() {
@@ -25,20 +35,6 @@ class PortfolioForm extends React.Component {
   }
   navigateToPortfolio() {
     this.props.history.push("/portfolio_items/");
-  }
-
-  componentDidMount() {
-    const url = `${iex.base_url}/stock/${this.fetchCompanySymbol()}/intraday-prices?chartLast=1&token=${iex.api_token}`
-
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({
-          data: data[data.length - 1]
-        })
-      })
-
-    this.state.purchase_price = this.state.data.close;
   }
 
   fetchCompanyName() {
@@ -74,9 +70,8 @@ class PortfolioForm extends React.Component {
   }
 
   render() {
-    const price = this.state.data.close;
 
-    const { amount_owned } = this.state;
+    const { purchase_price, amount_owned } = this.state;
 
     return (
       <div className="new-item-container">
@@ -111,7 +106,7 @@ class PortfolioForm extends React.Component {
             <label className="item-field">Purchase price ($)</label>
             <input
               type="text"
-              defaultValue={price}
+              defaultValue={purchase_price}
               onChange={this.update('purchase_price')}
               className="item-field"
             />
